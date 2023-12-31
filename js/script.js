@@ -1,19 +1,19 @@
-// NAVBAR ACTIVE
-let nav = document.querySelector(".navigation-wrap");
-window.onscroll = function () {
-    if(document.documentElement.scrollTop > 20){
-        nav.classList.add("scroll-on");
-    }else{
-        nav.classList.remove("scroll-on");
-    }
-}
- 
-
-// NAVBAR RESPONSIVE 
-let navBar = document.querySelectorAll(".nav-link");
-let navCollapse = document.querySelector(".navbar-collapse.collapse");
-navBar.forEach(function(a){
-    a.addEventListener("click", function(){
-        navCollapse.classList.remove("show");
-    })
-})
+// SWIPER
+var swiper = new Swiper(".bg-slider-thumbs", {
+    loop: true,
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+});
+var swiper2 = new Swiper(".bg-slider", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: swiper,
+    },
+});
